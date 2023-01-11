@@ -1,0 +1,216 @@
+body {
+    background-color: hsl(0, 0%, 7%);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@200&display=swap');
+
+
+:root {
+
+    /**
+     * colors
+     */
+  
+    /* gradient */
+  
+    --bg-gradient-onyx: linear-gradient(
+      to bottom right, 
+      hsl(240, 1%, 25%) 3%, 
+      hsl(0, 0%, 19%) 97%
+    );
+    --bg-gradient-jet: linear-gradient(
+      to bottom right, 
+      hsla(240, 1%, 18%, 0.251) 0%, 
+      hsla(240, 2%, 11%, 0) 100%
+    ), hsl(240, 2%, 13%);
+    --bg-gradient-yellow-1: linear-gradient(
+      to bottom right, 
+      #ff6b6b 0%, 
+      hsla(36, 100%, 69%, 0) 50%
+    );
+    --bg-gradient-yellow-2: linear-gradient(
+      135deg, 
+      hsla(0, 100%, 71%, 0.251) 0%, 
+      hsla(35, 100%, 68%, 0) 59.86%
+    ), hsl(240, 2%, 13%);
+    --border-gradient-onyx: linear-gradient(
+      to bottom right, 
+      hsl(0, 0%, 25%) 0%, 
+      hsla(0, 0%, 25%, 0) 50%
+    );
+    --text-gradient-yellow: linear-gradient(
+      to right, 
+      #ff7070, 
+      #ff5c5c
+    );
+  
+    /* solid */
+  
+    --jet: hsl(0, 0%, 22%);
+    --onyx: hsl(240, 1%, 17%);
+    --eerie-black-1: hsl(240, 2%, 13%);
+    --eerie-black-2: hsl(240, 2%, 12%);
+    --smoky-black: hsl(0, 0%, 7%);
+    --white-1: hsl(0, 0%, 100%);
+    --white-2: hsl(0, 0%, 98%);
+    --orange-yellow-crayola: hsl(0, 100%, 72%);
+    --vegas-gold: hsl(0, 54%, 58%);
+    --light-gray: hsl(0, 0%, 84%);
+    --light-gray-70: hsla(0, 0%, 84%, 0.7);
+    --bittersweet-shimmer: hsl(0, 43%, 51%);
+  
+    /**
+     * typography
+     */
+  
+    /* font-family */
+    --ff-poppins: 'Poppins', sans-serif;
+  
+    /* font-size */
+    --fs-1: 24px;
+    --fs-2: 18px;
+    --fs-3: 17px;
+    --fs-4: 16px;
+    --fs-5: 15px;
+    --fs-6: 14px;
+    --fs-7: 13px;
+    --fs-8: 11px;
+  
+    /* font-weight */
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
+  
+    /**
+     * shadow
+     */
+    
+    --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
+    --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
+    --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
+    --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
+    --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
+  
+    /**
+     * transition
+     */
+  
+    --transition-1: 0.25s ease;
+    --transition-2: 0.5s ease-in-out;
+  
+  }
+
+.title {
+    color: white;
+    font-family: 'Epilogue', sans-serif;
+    text-align: center;
+}
+
+.sub {
+    color: white;
+    font-family: 'Epilogue', sans-serif;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.btn {
+    color: white;
+    font-family: 'Epilogue', sans-serif;
+    padding: 15px;
+    display: block;
+    animation: 3s infinite alternate color;
+    border-radius: 5px;
+    width: 150px;
+    position: absolute;
+    top: 55%;
+    text-decoration: none;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+@keyframes color {
+    0% {
+
+            background-color: #FF0000;
+    }
+
+    100% {
+        background-color: #6441a5;
+    }
+  }
+
+  .rotate {
+    animation: 10s infinite ease-in-out alternate rot;
+    height: 50px;
+  }
+
+  @keyframes rot {
+    0% {
+
+        transform: rotate(0deg); 
+    }
+
+    50% {
+        transform: rotate(360deg); 
+    }
+    100% {
+
+        transform: rotate(0deg); 
+    }
+  }
+
+  .tuto {
+    background: var(--eerie-black-2);
+    border: 1px solid var(--jet);
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: var(--shadow-1);
+    z-index: 1;
+    margin-top: 700px;
+    height: 1807px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .title-step {
+    color: white;
+    font-family: 'Epilogue', sans-serif;
+    text-align: left;
+    margin-left: 15px;
+  }
+
+  .sub-step {
+    color: white;
+    font-family: 'Epilogue', sans-serif;
+    text-align: left;
+    margin-left: 15px;
+    font-size: 20px;
+    line-height: 35px;
+  }
+
+  a {
+    color: white;
+  }
+
+  .open {
+    opacity: 0;
+    transition: all ease-in-out .1s;
+  }
+
+  .last:hover + .open {
+    opacity: 1;
+    transition: all ease-in-out .1s;
+  }
+
+  img {
+    border-radius: 5px;
+    height: 250px;
+  }

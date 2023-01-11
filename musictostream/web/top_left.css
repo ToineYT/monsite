@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@600&display=swap');
+
+#derniereChanson {
+  background-color: #7B241C;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 15px;
+    width: 400px;
+    height: 121px;
+    transition: opacity 0.5s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;                      
+}
+
+p {
+  color: white;
+  font-family: 'Epilogue', sans-serif;
+}
+
+.pic {
+  border-radius: 5px;
+  height: 100px;
+      margin-top: 10px;
+      margin-left: 10px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.title {
+  margin-top: -99px;
+    margin-left: 119px;
+}
+
+.artiste {
+  margin-left: 119px;
+}
+
