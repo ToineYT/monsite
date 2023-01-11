@@ -7,13 +7,9 @@
     const nomUtilisateur = urlParams.get('name');
 
       function afficherDerniereChanson() {
-        // Récupération de votre nom d'utilisateur Last.fm (à remplacer)
-        
-
-        // Clé API pour accéder aux données de l'utilisateur (à remplacer)
+ 
         const apiKey = "d956af52f2ee966878b57a58e7427dcb";
 
-        // Appel de l'API Last.fm pour récupérer les détails de la dernière chanson jouée
         fetch(`http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${nomUtilisateur}&api_key=${apiKey}&format=json`)
           .then(response => response.json())
           .then(data => {
@@ -26,7 +22,6 @@
               derniereChanson = data.recenttracks.track[1];
             }
 
-            // Affichage des détails de la chanson
             const divChanson = document.getElementById("derniereChanson");
             divChanson.style.opacity = "0";
             setTimeout(() => {
