@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const nomUtilisateur = urlParams.get('name');
+
+      function afficherDerniereChanson() {
+        // Récupération de votre nom d'utilisateur Last.fm (à remplacer)
+        
+
+        // Clé API pour accéder aux données de l'utilisateur (à remplacer)
+        const apiKey = "d956af52f2ee966878b57a58e7427dcb";
+
+        // Appel de l'API Last.fm pour récupérer les détails de la dernière chanson jouée
+        fetch(`http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${nomUtilisateur}&api_key=${apiKey}&format=json`)
+          .then(response => response.json())
+          .then(data => {
+            // Récupération des détails de la dernière chanson
+            let derniereChanson = data.recenttracks.track[0];
+            // si il n'y a pas de chanson en cours de lecture
+            if (derniereChanson["@attr"] && derniereChanson["@attr"].nowplaying) {
+              derniereChanson = derniereChanson;
+            } else {
+              derniereChanson = data.recenttracks.track[1];
+            }
+
+            // Affichage des détails de la chanson
+            const divChanson = document.getElementById("derniereChanson");
+            divChanson.style.opacity = "0";
+            setTimeout(() => {
+            divChanson.innerHTML = `
+              <img class="pic" src="${derniereChanson.image[2]["#text"]}" alt="Pochette d'album"/>
+              <p class="title"> ${derniereChanson.name}</p>
+              <p class="artiste"> ${derniereChanson.artist["#text"]}</p>
+              `;
+                divChanson.style.opacity = "1";
+            }, 300);
+            setTimeout(afficherDerniereChanson, 30 * 1000);
+          }).catch((error) => {
+              console.log(error);
+              setTimeout(afficherDerniereChanson, 30 * 1000);
+          });
+      }
+    </script>
+  </head>
+  <body onload="afficherDerniereChanson()">
+    <div id="derniereChanson"></div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@600&display=swap');
+
+#derniereChanson {
+  background-color: #7B241C;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 15px;
+    width: 400px;
+    height: 121px;
+    transition: opacity 0.5s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;                      
+}
+
+p {
+  color: white;
+  font-family: 'Epilogue', sans-serif;
+  
+
+}
+
+.pic {
+  border-radius: 5px;
+  height: 100px;
+      margin-top: 10px;
+      margin-left: 10px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.title {
+  margin-top: -99px;
+    margin-left: 119px;
+}
+
+.artiste {
+  margin-left: 119px;
+}
+
+
+</style>
+  </body>
+</html>
