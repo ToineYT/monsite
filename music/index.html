@@ -10,7 +10,7 @@
 
 
 
-fetch(`http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${nomUtilisateur}&api_key=d956af52f2ee966878b57a58e7427dcb&format=json`)
+fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${nomUtilisateur}&api_key=d956af52f2ee966878b57a58e7427dcb&format=json`)
   .then(response => response.json())
   .then(data => {
     // Récupération des détails de la dernière chanson
